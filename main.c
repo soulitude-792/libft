@@ -4,9 +4,9 @@
 
 int main(void)
 {
-	printf("\n%d",ft_isalnum('1'));
-	printf("\n%d",ft_isalnum('%'));
-	printf("\n%d",ft_isalnum('b'));
+	printf("\n%d",ft_isascii('a'));
+	printf("\n%d",ft_isascii('&'));
+	printf("\n%d",ft_isascii('3'));
 
 
 	return (0);

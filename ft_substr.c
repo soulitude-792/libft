@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imigdady <imigdady@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/17 17:55:18 by imigdady          #+#    #+#             */
-/*   Updated: 2026/09/17 17:55:26 by imigdady         ###   ########.fr       */
+/*   Created: 2026/09/17 11:51:14 by imigdady          #+#    #+#             */
+/*   Updated: 2026/09/17 18:24:48 by imigdady         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t			i;
-	unsigned char	*ptr;
+	size_t	i;
+	char	*ptr;
 
-	ptr = (unsigned char *)s;
-	i = 0;
-	while (i < n)
+	if (!s)
+		return (NULL);
+	i = ft_strlen(s);
+	if (start >= i)
 	{
-		if (ptr[i] == (unsigned char)c)
-			return ((void *)(ptr + i));
-		i++;
+		ptr = (char *)malloc(1);
+		if (!ptr)
+			return (NULL);
+		ptr[0] = '\0';
+		return (ptr);
 	}
-	return (NULL);
+	if (len > (i - start))
+		len = i - start;
+	ptr = (char *)malloc(sizeof(char) * (len + 1));
+	if (!ptr)
+		return (NULL);
+	ft_strlcpy(ptr, s + start, len + 1);
+	return (ptr);
 }

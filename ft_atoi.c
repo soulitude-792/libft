@@ -1,20 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imigdady <imigdady@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/17 17:51:27 by imigdady          #+#    #+#             */
-/*   Updated: 2026/09/17 17:52:09 by imigdady         ###   ########.fr       */
+/*   Created: 2026/09/17 10:18:37 by imigdady          #+#    #+#             */
+/*   Updated: 2026/09/17 10:19:23 by imigdady         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+int	ft_atoi(const char *nptr)
 {
-	if (!(c >= 0 && c <= 127))
+	int	i;
+	int	sign;
+	int	result;
+
+	i = 0;
+	sign = 1;
+	result = 0;
+	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
+		i++;
+	if (nptr[i] == '+' || nptr[i] == '-')
 	{
-		return (0);
+		if (nptr[i] == '-')
+			sign = -1;
+		i++;
 	}
-	return (1);
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		result = result * 10 + (nptr[i] - '0');
+		i++;
+	}
+	return (result * sign);
 }

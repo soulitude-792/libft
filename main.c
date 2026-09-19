@@ -1,13 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: imigdady <imigdady@learner.42.tech>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/09/17 18:30:24 by imigdady          #+#    #+#             */
+/*   Updated: 2026/09/17 18:30:25 by imigdady         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <ctype.h>
 #include "libft.h"
 
-int main(void)
+int	main(void)
 {
-	printf("\n%d",ft_isascii('a'));
-	printf("\n%d",ft_isascii('&'));
-	printf("\n%d",ft_isascii('3'));
-
-
-	return (0);
 }

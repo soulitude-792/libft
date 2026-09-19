@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imigdady <imigdady@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/17 17:51:27 by imigdady          #+#    #+#             */
-/*   Updated: 2026/09/17 17:52:09 by imigdady         ###   ########.fr       */
+/*   Created: 2026/09/17 18:17:53 by imigdady          #+#    #+#             */
+/*   Updated: 2026/09/17 18:17:58 by imigdady         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft.h"
+
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	if (!(c >= 0 && c <= 127))
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	if (*little == '\0')
+		return ((char *)big);
+	while (i < len && big[i])
 	{
-		return (0);
+		j = 0;
+		while (big[i + j] == little[j] && little[j] && ((i + j) < len))
+		{
+			j++;
+		}
+		if (little[j] == '\0')
+			return ((char *)(big + i));
+		i++;
 	}
-	return (1);
+	return (NULL);
 }

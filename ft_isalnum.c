@@ -6,7 +6,7 @@
 /*   By: imigdady <imigdady@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/17 17:49:48 by imigdady          #+#    #+#             */
-/*   Updated: 2026/09/17 17:49:51 by imigdady         ###   ########.fr       */
+/*   Updated: 2026/09/29 07:45:27 by imigdady         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 int	ft_isalnum(int c)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
-		|| (c >= '0' && c <= '9'))
-		return (1);
-	return (0);
+	if (!(ft_isalpha(c) || ft_isdigit(c)))
+		return (0);
+	return (1);
 }

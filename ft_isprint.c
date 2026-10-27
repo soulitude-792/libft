@@ -6,9 +6,11 @@
 /*   By: imigdady <imigdady@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/17 17:53:40 by imigdady          #+#    #+#             */
-/*   Updated: 2026/09/17 17:53:51 by imigdady         ###   ########.fr       */
+/*   Updated: 2026/09/29 07:46:53 by imigdady         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

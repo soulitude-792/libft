@@ -6,9 +6,11 @@
 /*   By: imigdady <imigdady@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/17 18:10:18 by imigdady          #+#    #+#             */
-/*   Updated: 2026/09/17 18:10:41 by imigdady         ###   ########.fr       */
+/*   Updated: 2026/09/29 07:47:08 by imigdady         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

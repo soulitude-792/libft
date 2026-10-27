@@ -34,32 +34,36 @@ SOURCE = ft_isalpha.c \
 	 ft_putstr_fd.c \
 	 ft_putendl_fd.c \
 	 ft_putnbr_fd.c \
+	 ft_lstnew.c \
+	 ft_lstadd_front.c \
+	 ft_lstsize.c \
+	 ft_lstlast.c \
+	 ft_lstadd_back.c \
+	 ft_lstdelone.c \
+	 ft_lstclear.c \
+	 ft_lstiter.c \
+	 ft_lstmap.c
 
 CC = gcc
+CFLAGS = -Wall -Werror -Wextra
 
 OBJECTIVE = $(SOURCE:.c=.o)
-
 
 all: $(NAME)
 
 $(NAME): $(OBJECTIVE)
 	ar rcs $(NAME) $(OBJECTIVE)
 
-
-%o: %.c $(HEADER)
-	$(CC) -Wall -Werror -Wextra -c $< -o $@
-
+%.o: %.c $(HEADER)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJECTIVE)
-
 
 fclean: 
 	make clean
 	rm -rf $(NAME)
 
-
 re: fclean all
 
-
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re
